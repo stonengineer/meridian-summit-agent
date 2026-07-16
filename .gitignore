@@ -1,19 +1,36 @@
-# python
+# ─── secrets / local config ───────────────────────────────────────────────
+# .env holds project ids and local overrides. .env.example is committed and
+# is the inventory of what configures the app.
+.env
+.env.local
+.env.*.local
+
+# Application Default Credentials, if ever written into the project
+application_default_credentials.json
+*-service-account*.json
+
+# ─── python ───────────────────────────────────────────────────────────────
 __pycache__/
 *.py[cod]
+*$py.class
 .venv/
+venv/
 *.egg-info/
+build/
 .mypy_cache/
 .pytest_cache/
 .ruff_cache/
+.coverage
 
-# node
+# ─── node ─────────────────────────────────────────────────────────────────
 node_modules/
 dist/
+.vite/
+npm-debug.log*
+frontend/package-lock.json
 
-# env
-.env
-.env.local
-
-# os
+# ─── editors / os ─────────────────────────────────────────────────────────
 .DS_Store
+.idea/
+.vscode/
+*.swp
