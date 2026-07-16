@@ -1,0 +1,97 @@
+/*
+  Cairn — design tokens.
+
+  The two panes are deliberately different visual languages:
+    · The phone is a consumer product. Warm paper, soft radii, Inter.
+    · The rail is machinery. Cold basalt, hairline rules, JetBrains Mono.
+  They share exactly one accent (moss) so they read as one system without
+  pretending to be the same thing. The contrast IS the thesis: product on the
+  left, the work behind it on the right.
+*/
+
+:root {
+  /* Ground */
+  --basalt: #14181d; /* rail — cold blue-black, stone not black */
+  --basalt-2: #1b2128; /* rail raised surfaces */
+  --slate-line: #232a33; /* rail hairlines */
+  --paper: #fbfaf8; /* phone chat ground */
+  --paper-2: #f2efe9; /* phone composer / recessed */
+  --chalk: #ffffff;
+
+  /* Ink */
+  --ink: #1a1f26; /* phone text */
+  --ink-soft: #5d6570; /* phone secondary */
+  --rail-ink: #d7dce2; /* rail primary text */
+  --rail-soft: #6e7885; /* rail secondary text */
+
+  /* Accent — Cairn is a trail marker. Moss, not terracotta. */
+  --moss: #4a6b52;
+  --moss-lift: #5b8163;
+  --lichen: #8fa893; /* muted secondary green, rail-safe */
+
+  /* Reserved: refusals only. One job, so it means something. */
+  --clay: #b4593a;
+  --clay-wash: #f6e3db;
+
+  /* Type */
+  --display: "Bricolage Grotesque", system-ui, sans-serif;
+  --body: "Inter", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Geometry */
+  --r-sm: 6px;
+  --r-md: 12px;
+  --r-lg: 20px;
+  --phone-w: 390px;
+  --phone-h: 780px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: var(--body);
+  background: var(--basalt);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+/* Visible keyboard focus everywhere — quality floor, not decoration. */
+:focus-visible {
+  outline: 2px solid var(--moss-lift);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+::selection {
+  background: var(--moss);
+  color: var(--chalk);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

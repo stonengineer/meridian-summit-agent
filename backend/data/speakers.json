@@ -1,0 +1,68 @@
+{
+  "speakers": [
+    {
+      "attendee_id": "att-1011",
+      "bio": "Leads Meridian's applied AI organization, focused on retrieval and agent orchestration at enterprise scale. Former research scientist in information retrieval; keynote speaker on grounding and evaluation.",
+      "speaking_sessions": [
+        "ses-001",
+        "ses-011"
+      ]
+    },
+    {
+      "attendee_id": "att-1012",
+      "bio": "Ships agentic AI deployments inside Fortune 500 customer environments. Known for pragmatic delivery patterns and honest talks about what breaks in production.",
+      "speaking_sessions": [
+        "ses-004",
+        "ses-009"
+      ]
+    },
+    {
+      "attendee_id": "att-1013",
+      "bio": "Runs the platform org behind Northwind's customer-facing AI. Focus areas: vector infrastructure, latency, and cost control for RAG at scale.",
+      "speaking_sessions": [
+        "ses-002",
+        "ses-008"
+      ]
+    },
+    {
+      "attendee_id": "att-1014",
+      "bio": "Works on LLM serving infrastructure and function-calling reliability. Frequent contributor to open evaluation frameworks.",
+      "speaking_sessions": [
+        "ses-003",
+        "ses-008"
+      ]
+    },
+    {
+      "attendee_id": "att-1015",
+      "bio": "Leads the developer community and hands-on education programs. Designs the workshop and certification curriculum for Meridian Summit.",
+      "speaking_sessions": [
+        "ses-004",
+        "ses-010",
+        "ses-011"
+      ]
+    },
+    {
+      "attendee_id": "att-1016",
+      "bio": "Specializes in security for AI systems: prompt injection defense, data governance, and access control for retrieval pipelines.",
+      "speaking_sessions": [
+        "ses-005"
+      ]
+    },
+    {
+      "attendee_id": "att-1017",
+      "bio": "Enterprise CTO who has taken multiple AI programs from pilot to production across retail operations. Speaks on organizational readiness and change management.",
+      "speaking_sessions": [
+        "ses-006"
+      ]
+    },
+    {
+      "attendee_id": "att-1018",
+      "bio": "Builds evaluation harnesses and offline scoring pipelines for production retrieval and agent systems. Advocate for measurement-first AI delivery.",
+      "speaking_sessions": [
+        "ses-002",
+        "ses-007",
+        "ses-010"
+      ]
+    }
+  ]
+}

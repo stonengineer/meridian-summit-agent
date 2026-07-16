@@ -1,0 +1,98 @@
+.att-card {
+  background: var(--chalk);
+  border: 1px solid #e6e2da;
+  border-radius: var(--r-md);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.att-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.att-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+}
+
+.att-id {
+  min-width: 0; /* lets the ellipsis actually work inside a flex child */
+}
+
+.att-name {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  line-height: 1.25;
+}
+
+.att-speaker {
+  font-family: var(--mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--moss);
+  background: #e8efe9;
+  border-radius: 3px;
+  padding: 2px 5px;
+  flex-shrink: 0;
+}
+
+.att-role {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 1px;
+}
+
+.att-actions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.att-btn {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12.5px;
+  font-weight: 500;
+  padding: 7px 0;
+  border-radius: var(--r-sm);
+  background: var(--paper-2);
+  color: var(--ink-soft);
+  transition: background 0.14s ease, color 0.14s ease;
+}
+
+.att-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.att-btn-live {
+  background: #e8efe9;
+  color: var(--moss);
+}
+
+.att-btn-live:hover {
+  background: var(--moss);
+  color: var(--chalk);
+}

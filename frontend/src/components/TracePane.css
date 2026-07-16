@@ -1,0 +1,313 @@
+.trace {
+  background: var(--basalt);
+  border-left: 1px solid var(--slate-line);
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* ---------- brand ---------- */
+.trace-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--slate-line);
+  flex-shrink: 0;
+}
+
+.trace-brand-id {
+  flex: 1;
+  min-width: 0;
+}
+
+.trace-name {
+  font-family: var(--display);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--rail-ink);
+  letter-spacing: -0.01em;
+}
+
+.trace-sub {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  color: var(--rail-soft);
+  letter-spacing: 0.02em;
+  margin-top: 1px;
+}
+
+/* ---------- status ---------- */
+.status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.status-text {
+  font-family: var(--mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--rail-soft);
+  white-space: nowrap;
+}
+
+.status.is-live .status-dot {
+  background: var(--moss-lift);
+  box-shadow: 0 0 0 3px rgba(91, 129, 99, 0.18);
+}
+.status.is-offline .status-dot {
+  background: #b08a4a;
+  box-shadow: 0 0 0 3px rgba(176, 138, 74, 0.16);
+}
+.status.is-down .status-dot {
+  background: var(--clay);
+  box-shadow: 0 0 0 3px rgba(180, 89, 58, 0.16);
+}
+
+/* ---------- blocks ---------- */
+.trace-block {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--slate-line);
+}
+
+.trace-log-block {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.trace-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--rail-soft);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-shrink: 0;
+}
+
+.trace-count {
+  font-size: 9px;
+  background: var(--basalt-2);
+  color: var(--rail-soft);
+  padding: 1px 5px;
+  border-radius: 3px;
+  letter-spacing: 0;
+}
+
+.trace-dim {
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: var(--rail-soft);
+}
+
+/* ---------- identity ---------- */
+.trace-me {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.trace-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.trace-me-id {
+  min-width: 0;
+  flex: 1;
+}
+
+.trace-me-name {
+  font-family: var(--display);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--rail-ink);
+  line-height: 1.3;
+}
+
+.trace-me-role {
+  font-size: 11.5px;
+  color: var(--rail-soft);
+  margin-top: 1px;
+  line-height: 1.35;
+}
+
+.trace-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 7px;
+}
+
+.chip {
+  font-family: var(--mono);
+  font-size: 9px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background: var(--basalt-2);
+  color: var(--rail-soft);
+  border: 1px solid var(--slate-line);
+}
+
+/* Pass tier is the field that explains why an action gets refused —
+   it earns the accent. */
+.chip-tier {
+  background: rgba(74, 107, 82, 0.18);
+  border-color: rgba(91, 129, 99, 0.35);
+  color: var(--lichen);
+}
+
+/* ---------- log ---------- */
+.trace-log {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--slate-line) transparent;
+}
+
+.trace-log::-webkit-scrollbar {
+  width: 6px;
+}
+.trace-log::-webkit-scrollbar-thumb {
+  background: var(--slate-line);
+  border-radius: 3px;
+}
+
+.entry {
+  background: var(--basalt-2);
+  border-left: 2px solid var(--moss);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+  padding: 8px 10px;
+  animation: entry-in 0.24s ease;
+}
+
+.entry.is-refused {
+  border-left-color: var(--clay);
+}
+
+@keyframes entry-in {
+  from {
+    opacity: 0;
+    transform: translateX(-4px);
+  }
+}
+
+.entry-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.entry-tool {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--lichen);
+}
+
+.entry-tag {
+  font-family: var(--mono);
+  font-size: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #b08a4a;
+  border: 1px solid rgba(176, 138, 74, 0.4);
+  border-radius: 2px;
+  padding: 0 3px;
+}
+
+.entry-arg {
+  display: flex;
+  gap: 6px;
+  font-family: var(--mono);
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.entry-key {
+  color: var(--rail-soft);
+  flex-shrink: 0;
+}
+
+.entry-val {
+  color: var(--rail-ink);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.entry-out {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--rail-soft);
+  margin-top: 4px;
+  line-height: 1.45;
+}
+
+.entry-out.is-refused {
+  color: #d08a6e;
+}
+
+/* ---------- working ---------- */
+.trace-working {
+  display: flex;
+  gap: 4px;
+  padding: 8px 10px;
+}
+
+.trace-working span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--rail-soft);
+  animation: pulse 1.2s infinite;
+}
+.trace-working span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.trace-working span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes pulse {
+  0%,
+  60%,
+  100% {
+    opacity: 0.25;
+  }
+  30% {
+    opacity: 1;
+  }
+}

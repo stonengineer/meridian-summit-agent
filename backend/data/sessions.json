@@ -1,0 +1,228 @@
+{
+  "sessions": [
+    {
+      "id": "ses-001",
+      "title": "Opening Keynote: The Production Agent Era",
+      "type": "keynote",
+      "description": "Meridian's applied AI leadership opens the summit with the state of enterprise agentic AI: what's moved from demo to production in the last year, where retrieval and orchestration are heading, and the delivery patterns separating pilots that ship from pilots that stall.",
+      "speaker_ids": [
+        "att-1011"
+      ],
+      "date": "2026-09-15",
+      "start_time": "09:00",
+      "end_time": "10:15",
+      "location": "Moscone North, Main Hall",
+      "tags": [
+        "keynote",
+        "strategy",
+        "agents",
+        "ai"
+      ],
+      "level": "all"
+    },
+    {
+      "id": "ses-002",
+      "title": "Hybrid Retrieval in Practice: BM25, Vectors, and Fusion",
+      "type": "breakout",
+      "description": "A hands-on-adjacent breakdown of why pure vector search underperforms in enterprise settings and how lexical + dense fusion fixes it. Covers reciprocal rank fusion, reranking, and how to tune retrieval when you can't calibrate score scales across retrievers.",
+      "speaker_ids": [
+        "att-1013",
+        "att-1018"
+      ],
+      "date": "2026-09-15",
+      "start_time": "11:00",
+      "end_time": "11:45",
+      "location": "Moscone West, Level 2, Room 2008",
+      "tags": [
+        "rag",
+        "retrieval",
+        "search",
+        "technical"
+      ],
+      "level": "intermediate"
+    },
+    {
+      "id": "ses-003",
+      "title": "Function Calling That Doesn't Fall Over",
+      "type": "breakout",
+      "description": "Tool-use reliability in production: schema design, handling malformed calls, multi-step tool loops, and guardrails that keep an agent from taking the wrong action. Real failure modes from real deployments.",
+      "speaker_ids": [
+        "att-1014"
+      ],
+      "date": "2026-09-15",
+      "start_time": "13:30",
+      "end_time": "14:15",
+      "location": "Moscone West, Level 3, Room 3012",
+      "tags": [
+        "agents",
+        "tool-use",
+        "reliability",
+        "technical"
+      ],
+      "level": "advanced"
+    },
+    {
+      "id": "ses-004",
+      "title": "Workshop: Build a Grounded Support Agent",
+      "type": "workshop",
+      "description": "A guided three-hour lab where you build a retrieval-grounded agent with case creation and escalation routing from scratch. Bring a laptop. Lab machines and starter repo provided. Seats limited; reservation required.",
+      "speaker_ids": [
+        "att-1012",
+        "att-1015"
+      ],
+      "date": "2026-09-14",
+      "start_time": "13:00",
+      "end_time": "16:00",
+      "location": "Moscone South, Room 204",
+      "tags": [
+        "workshop",
+        "rag",
+        "agents",
+        "hands-on"
+      ],
+      "level": "intermediate"
+    },
+    {
+      "id": "ses-005",
+      "title": "Securing Retrieval Pipelines",
+      "type": "breakout",
+      "description": "Prompt injection through retrieved documents, data governance across a vector store, and access control when an agent can read anything in the index. A security engineer's guide to not getting owned by your own RAG system.",
+      "speaker_ids": [
+        "att-1016"
+      ],
+      "date": "2026-09-16",
+      "start_time": "10:30",
+      "end_time": "11:15",
+      "location": "Moscone West, Level 2, Room 2014",
+      "tags": [
+        "security",
+        "rag",
+        "governance",
+        "technical"
+      ],
+      "level": "advanced"
+    },
+    {
+      "id": "ses-006",
+      "title": "From Pilot to Production: A CTO's Field Notes",
+      "type": "breakout",
+      "description": "An enterprise CTO walks through three AI programs — one that scaled, one that stalled, one that was killed — and the organizational, not technical, reasons why. Change management, executive sponsorship, and measuring the right things.",
+      "speaker_ids": [
+        "att-1017"
+      ],
+      "date": "2026-09-16",
+      "start_time": "14:00",
+      "end_time": "14:45",
+      "location": "Moscone West, Level 3, Room 3001",
+      "tags": [
+        "strategy",
+        "leadership",
+        "adoption",
+        "executive"
+      ],
+      "level": "all"
+    },
+    {
+      "id": "ses-007",
+      "title": "Evaluation-First AI Delivery",
+      "type": "breakout",
+      "description": "Why 'it looks good in the demo' isn't a metric. Building gold datasets, offline eval harnesses, recall@k for retrieval, and regression gates so you know when a change made your agent worse before your customer does.",
+      "speaker_ids": [
+        "att-1018"
+      ],
+      "date": "2026-09-16",
+      "start_time": "16:00",
+      "end_time": "16:45",
+      "location": "Moscone West, Level 2, Room 2008",
+      "tags": [
+        "evaluation",
+        "rag",
+        "quality",
+        "technical"
+      ],
+      "level": "intermediate"
+    },
+    {
+      "id": "ses-008",
+      "title": "Cost and Latency at Scale",
+      "type": "breakout",
+      "description": "The unglamorous engineering behind serving retrieval and generation to millions of requests: caching strategies, embedding reuse, model routing, and the tradeoffs that keep an AI feature from bankrupting the P&L.",
+      "speaker_ids": [
+        "att-1013",
+        "att-1014"
+      ],
+      "date": "2026-09-17",
+      "start_time": "11:00",
+      "end_time": "11:45",
+      "location": "Moscone West, Level 3, Room 3012",
+      "tags": [
+        "infrastructure",
+        "scale",
+        "cost",
+        "technical"
+      ],
+      "level": "advanced"
+    },
+    {
+      "id": "ses-009",
+      "title": "Delivery Patterns for Field Engineers",
+      "type": "breakout",
+      "description": "A principal field engineer on how to walk into an unfamiliar customer stack and ship. Discovery, de-risking with prototypes, managing scope, and the soft skills that make or break an enterprise AI engagement.",
+      "speaker_ids": [
+        "att-1012"
+      ],
+      "date": "2026-09-17",
+      "start_time": "14:00",
+      "end_time": "14:45",
+      "location": "Moscone West, Level 2, Room 2014",
+      "tags": [
+        "delivery",
+        "field-engineering",
+        "agents",
+        "career"
+      ],
+      "level": "intermediate"
+    },
+    {
+      "id": "ses-010",
+      "title": "Workshop: Evaluation Harness Deep Dive",
+      "type": "workshop",
+      "description": "A hands-on Friday lab building an evaluation pipeline for a retrieval system: assembling a gold set, scoring recall and precision, and wiring a regression gate into CI. Laptop required, reservation required.",
+      "speaker_ids": [
+        "att-1018",
+        "att-1015"
+      ],
+      "date": "2026-09-18",
+      "start_time": "09:00",
+      "end_time": "12:00",
+      "location": "Moscone South, Room 208",
+      "tags": [
+        "workshop",
+        "evaluation",
+        "hands-on",
+        "quality"
+      ],
+      "level": "advanced"
+    },
+    {
+      "id": "ses-011",
+      "title": "Closing Session: What We Learned This Week",
+      "type": "keynote",
+      "description": "Meridian leadership closes the summit with a synthesis of the week's themes, community highlights, and a look at what's next for the platform and the field.",
+      "speaker_ids": [
+        "att-1011",
+        "att-1015"
+      ],
+      "date": "2026-09-18",
+      "start_time": "12:15",
+      "end_time": "13:00",
+      "location": "Moscone North, Main Hall",
+      "tags": [
+        "keynote",
+        "community",
+        "strategy"
+      ],
+      "level": "all"
+    }
+  ]
+}

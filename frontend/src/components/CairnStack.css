@@ -1,0 +1,66 @@
+/*
+  Stones taper toward the top like a real cairn. Widths are hand-set rather
+  than computed so the silhouette reads as stacked stone, not as a bar chart.
+*/
+.cairn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  width: 26px;
+}
+
+.stone {
+  height: 3px;
+  border-radius: 2px;
+  background: var(--slate-line);
+  transition:
+    background 0.3s ease,
+    transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform-origin: center;
+}
+
+/* level 4 = bottom (widest), level 0 = top (narrowest) */
+.stone-4 {
+  width: 24px;
+}
+.stone-3 {
+  width: 20px;
+}
+.stone-2 {
+  width: 16px;
+}
+.stone-1 {
+  width: 11px;
+}
+.stone-0 {
+  width: 7px;
+  height: 4px;
+  border-radius: 2px 2px 1px 1px;
+}
+
+.stone.is-set {
+  background: var(--lichen);
+}
+
+/* Bottom stones set first and read as "grounded" — slightly stronger. */
+.stone-4.is-set,
+.stone-3.is-set {
+  background: var(--moss-lift);
+}
+
+.cairn.is-thinking .stone {
+  animation: breathe 1.5s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scaleX(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}

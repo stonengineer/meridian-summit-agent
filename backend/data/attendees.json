@@ -1,0 +1,428 @@
+{
+  "attendees": [
+    {
+      "id": "att-1001",
+      "name": "Joana Whitfield",
+      "first_name": "Joana",
+      "last_name": "Whitfield",
+      "title": "Director of Engineering",
+      "company": "Cascade Health Systems",
+      "email": "j.whitfield@example.com",
+      "phone": "+1 (503) 555-0100",
+      "pass_tier": "Summit Executive",
+      "is_speaker": false,
+      "profile": "Leads a 40-person engineering org modernizing patient-facing systems. At the summit to evaluate agentic AI for clinical support workflows and to meet delivery partners. Interested in security and governance given healthcare data constraints.",
+      "interests": [
+        "security",
+        "rag",
+        "governance",
+        "adoption"
+      ],
+      "registered_sessions": [
+        "ses-001",
+        "ses-005",
+        "ses-006"
+      ]
+    },
+    {
+      "id": "att-1002",
+      "name": "Rafael Ortiz",
+      "first_name": "Rafael",
+      "last_name": "Ortiz",
+      "title": "Senior Software Engineer",
+      "company": "Northwind Financial",
+      "email": "rafael.ortiz@example.com",
+      "phone": "+1 (212) 555-0100",
+      "pass_tier": "Builder",
+      "is_speaker": false,
+      "profile": "Backend engineer building retrieval infrastructure for internal knowledge tools. Hands-on builder who wants workshop time and deep technical breakouts over strategy content.",
+      "interests": [
+        "rag",
+        "retrieval",
+        "infrastructure",
+        "evaluation"
+      ],
+      "registered_sessions": [
+        "ses-002",
+        "ses-004",
+        "ses-007",
+        "ses-010"
+      ]
+    },
+    {
+      "id": "att-1003",
+      "name": "Mei Lin Chen",
+      "first_name": "Mei Lin",
+      "last_name": "Chen",
+      "title": "VP of Product",
+      "company": "Helios Retail Group",
+      "email": "meilin.chen@example.com",
+      "phone": "+1 (312) 555-0100",
+      "pass_tier": "Summit Executive",
+      "is_speaker": false,
+      "profile": "Owns the AI product roadmap for a retail group taking customer-service automation to production. Focused on adoption, ROI, and the organizational side of AI delivery rather than implementation detail.",
+      "interests": [
+        "strategy",
+        "adoption",
+        "leadership",
+        "agents"
+      ],
+      "registered_sessions": [
+        "ses-001",
+        "ses-006",
+        "ses-009"
+      ]
+    },
+    {
+      "id": "att-1004",
+      "name": "Devon Pierce",
+      "first_name": "Devon",
+      "last_name": "Pierce",
+      "title": "Field Delivery Engineer",
+      "company": "Aperture Cloud",
+      "email": "devon.pierce@example.com",
+      "phone": "+1 (206) 555-0100",
+      "pass_tier": "Builder",
+      "is_speaker": false,
+      "profile": "Customer-facing engineer who ships AI deployments in enterprise environments. Attending to sharpen delivery craft and pick up patterns for retrieval and tool-use reliability. Crosses stacks frequently.",
+      "interests": [
+        "delivery",
+        "field-engineering",
+        "tool-use",
+        "agents"
+      ],
+      "registered_sessions": [
+        "ses-003",
+        "ses-004",
+        "ses-009"
+      ]
+    },
+    {
+      "id": "att-1005",
+      "name": "Sarah Kowalski",
+      "first_name": "Sarah",
+      "last_name": "Kowalski",
+      "title": "Data Science Lead",
+      "company": "Meridian Technologies",
+      "email": "sarah.k@example.com",
+      "phone": "+1 (415) 555-0100",
+      "pass_tier": "Builder",
+      "is_speaker": false,
+      "profile": "Leads a data science team responsible for evaluation and quality of production models. Passionate about measurement-first delivery and building the datasets others skip.",
+      "interests": [
+        "evaluation",
+        "quality",
+        "rag",
+        "technical"
+      ],
+      "registered_sessions": [
+        "ses-002",
+        "ses-007",
+        "ses-010"
+      ]
+    },
+    {
+      "id": "att-1006",
+      "name": "Omar Haddad",
+      "first_name": "Omar",
+      "last_name": "Haddad",
+      "title": "Chief Information Officer",
+      "company": "Sterling Manufacturing",
+      "email": "omar.haddad@example.com",
+      "phone": "+1 (216) 555-0100",
+      "pass_tier": "Summit Executive",
+      "is_speaker": false,
+      "profile": "CIO evaluating enterprise AI for supply-chain and field-support use cases. First time at the summit; here for the executive track, partner meetings, and to understand delivery risk before committing budget.",
+      "interests": [
+        "strategy",
+        "leadership",
+        "adoption",
+        "security"
+      ],
+      "registered_sessions": [
+        "ses-001",
+        "ses-006"
+      ]
+    },
+    {
+      "id": "att-1007",
+      "name": "Bianca Rossi",
+      "first_name": "Bianca",
+      "last_name": "Rossi",
+      "title": "Machine Learning Engineer",
+      "company": "Fortress Labs",
+      "email": "bianca.rossi@example.com",
+      "phone": "+1 (617) 555-0100",
+      "pass_tier": "Builder",
+      "is_speaker": false,
+      "profile": "Works on secure ML systems and is deepening her retrieval and agent skills. Wants advanced technical content on security and infrastructure. Prefers hands-on labs to lecture-style sessions.",
+      "interests": [
+        "security",
+        "infrastructure",
+        "rag",
+        "technical"
+      ],
+      "registered_sessions": [
+        "ses-005",
+        "ses-008",
+        "ses-010"
+      ]
+    },
+    {
+      "id": "att-1008",
+      "name": "Trevor Nakamura",
+      "first_name": "Trevor",
+      "last_name": "Nakamura",
+      "title": "Startup Founder",
+      "company": "Loop AI (seed stage)",
+      "email": "trevor@example.com",
+      "phone": "+1 (628) 555-0100",
+      "pass_tier": "Explorer",
+      "is_speaker": false,
+      "profile": "Solo technical founder building a vertical AI agent product. Budget-conscious Explorer attendee maximizing keynotes and expo-floor networking to find partners and early design patterns.",
+      "interests": [
+        "agents",
+        "strategy",
+        "rag",
+        "career"
+      ],
+      "registered_sessions": [
+        "ses-001",
+        "ses-011"
+      ]
+    },
+    {
+      "id": "att-1009",
+      "name": "Aisha Bello",
+      "first_name": "Aisha",
+      "last_name": "Bello",
+      "title": "Engineering Manager",
+      "company": "Cascade Health Systems",
+      "email": "aisha.bello@example.com",
+      "phone": "+1 (503) 555-0101",
+      "pass_tier": "Builder",
+      "is_speaker": false,
+      "profile": "Manages a team piloting internal AI assistants. Balancing hands-on curiosity with delivery-lead responsibilities; interested in both workshops and the field-engineering delivery track.",
+      "interests": [
+        "delivery",
+        "rag",
+        "evaluation",
+        "adoption"
+      ],
+      "registered_sessions": [
+        "ses-004",
+        "ses-007",
+        "ses-009"
+      ]
+    },
+    {
+      "id": "att-1010",
+      "name": "Henrik Sørensen",
+      "first_name": "Henrik",
+      "last_name": "Sørensen",
+      "title": "Principal Architect",
+      "company": "Northwind Financial",
+      "email": "henrik.s@example.com",
+      "phone": "+1 (212) 555-0101",
+      "pass_tier": "Summit Executive",
+      "is_speaker": false,
+      "profile": "Enterprise architect setting the reference architecture for AI systems across a large financial institution. Focused on scale, cost, and security tradeoffs. Attends advanced technical sessions despite the executive pass.",
+      "interests": [
+        "infrastructure",
+        "scale",
+        "security",
+        "cost"
+      ],
+      "registered_sessions": [
+        "ses-005",
+        "ses-008"
+      ]
+    },
+    {
+      "id": "att-1011",
+      "name": "Dr. Amara Okonkwo",
+      "first_name": "Amara",
+      "last_name": "Okonkwo",
+      "title": "VP, Applied AI",
+      "company": "Meridian Technologies",
+      "email": "amara.okonkwo@meridian.example.com",
+      "phone": "+1 (415) 555-0101",
+      "pass_tier": "Summit Executive",
+      "is_speaker": true,
+      "profile": "Leads Meridian's applied AI organization, focused on retrieval and agent orchestration at enterprise scale. Former research scientist in information retrieval; keynote speaker on grounding and evaluation.",
+      "interests": [
+        "rag",
+        "retrieval",
+        "evaluation",
+        "agents",
+        "strategy"
+      ],
+      "registered_sessions": [
+        "ses-001",
+        "ses-011"
+      ]
+    },
+    {
+      "id": "att-1012",
+      "name": "Diego Salinas",
+      "first_name": "Diego",
+      "last_name": "Salinas",
+      "title": "Principal Field Delivery Engineer",
+      "company": "Meridian Technologies",
+      "email": "diego.salinas@meridian.example.com",
+      "phone": "+1 (415) 555-0102",
+      "pass_tier": "Builder",
+      "is_speaker": true,
+      "profile": "Ships agentic AI deployments inside Fortune 500 customer environments. Known for pragmatic delivery patterns and honest talks about what breaks in production.",
+      "interests": [
+        "delivery",
+        "field-engineering",
+        "agents",
+        "tool-use"
+      ],
+      "registered_sessions": [
+        "ses-004",
+        "ses-009"
+      ]
+    },
+    {
+      "id": "att-1013",
+      "name": "Lena Warsaw",
+      "first_name": "Lena",
+      "last_name": "Warsaw",
+      "title": "Head of Platform Engineering",
+      "company": "Northwind Financial",
+      "email": "lena.warsaw@northwind.example.com",
+      "phone": "+1 (212) 555-0102",
+      "pass_tier": "Summit Executive",
+      "is_speaker": true,
+      "profile": "Runs the platform org behind Northwind's customer-facing AI. Focus areas: vector infrastructure, latency, and cost control for RAG at scale.",
+      "interests": [
+        "infrastructure",
+        "rag",
+        "retrieval",
+        "scale",
+        "cost"
+      ],
+      "registered_sessions": [
+        "ses-002",
+        "ses-008"
+      ]
+    },
+    {
+      "id": "att-1014",
+      "name": "Marcus Feldman",
+      "first_name": "Marcus",
+      "last_name": "Feldman",
+      "title": "Distinguished Engineer",
+      "company": "Aperture Cloud",
+      "email": "marcus.feldman@aperture.example.com",
+      "phone": "+1 (206) 555-0101",
+      "pass_tier": "Builder",
+      "is_speaker": true,
+      "profile": "Works on LLM serving infrastructure and function-calling reliability. Frequent contributor to open evaluation frameworks.",
+      "interests": [
+        "infrastructure",
+        "tool-use",
+        "reliability",
+        "evaluation"
+      ],
+      "registered_sessions": [
+        "ses-003",
+        "ses-008"
+      ]
+    },
+    {
+      "id": "att-1015",
+      "name": "Priya Ramanathan",
+      "first_name": "Priya",
+      "last_name": "Ramanathan",
+      "title": "Director of Developer Relations",
+      "company": "Meridian Technologies",
+      "email": "priya.ramanathan@meridian.example.com",
+      "phone": "+1 (415) 555-0103",
+      "pass_tier": "Summit Executive",
+      "is_speaker": true,
+      "profile": "Leads the developer community and hands-on education programs. Designs the workshop and certification curriculum for Meridian Summit.",
+      "interests": [
+        "community",
+        "workshop",
+        "career",
+        "adoption"
+      ],
+      "registered_sessions": [
+        "ses-004",
+        "ses-010",
+        "ses-011"
+      ]
+    },
+    {
+      "id": "att-1016",
+      "name": "Tomás Ribeiro",
+      "first_name": "Tomás",
+      "last_name": "Ribeiro",
+      "title": "Staff Security Engineer",
+      "company": "Fortress Labs",
+      "email": "tomas.ribeiro@fortress.example.com",
+      "phone": "+1 (617) 555-0101",
+      "pass_tier": "Builder",
+      "is_speaker": true,
+      "profile": "Specializes in security for AI systems: prompt injection defense, data governance, and access control for retrieval pipelines.",
+      "interests": [
+        "security",
+        "governance",
+        "rag",
+        "technical"
+      ],
+      "registered_sessions": [
+        "ses-005"
+      ]
+    },
+    {
+      "id": "att-1017",
+      "name": "Grace Yoon",
+      "first_name": "Grace",
+      "last_name": "Yoon",
+      "title": "Chief Technology Officer",
+      "company": "Helios Retail Group",
+      "email": "grace.yoon@helios.example.com",
+      "phone": "+1 (312) 555-0101",
+      "pass_tier": "Summit Executive",
+      "is_speaker": true,
+      "profile": "Enterprise CTO who has taken multiple AI programs from pilot to production across retail operations. Speaks on organizational readiness and change management.",
+      "interests": [
+        "strategy",
+        "leadership",
+        "adoption",
+        "agents"
+      ],
+      "registered_sessions": [
+        "ses-006"
+      ]
+    },
+    {
+      "id": "att-1018",
+      "name": "Samuel Adeyemi",
+      "first_name": "Samuel",
+      "last_name": "Adeyemi",
+      "title": "Lead ML Engineer",
+      "company": "Meridian Technologies",
+      "email": "samuel.adeyemi@meridian.example.com",
+      "phone": "+1 (415) 555-0104",
+      "pass_tier": "Builder",
+      "is_speaker": true,
+      "profile": "Builds evaluation harnesses and offline scoring pipelines for production retrieval and agent systems. Advocate for measurement-first AI delivery.",
+      "interests": [
+        "evaluation",
+        "quality",
+        "rag",
+        "technical"
+      ],
+      "registered_sessions": [
+        "ses-002",
+        "ses-007",
+        "ses-010"
+      ]
+    }
+  ]
+}

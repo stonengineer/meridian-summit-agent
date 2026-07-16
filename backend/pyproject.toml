@@ -1,0 +1,36 @@
+[project]
+name = "cairn"
+version = "0.1.0"
+description = "Grounded conference concierge agent for Meridian Summit"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.34",
+    "pydantic>=2.10",
+    "google-cloud-aiplatform>=1.71",
+]
+
+[project.optional-dependencies]
+dev = [
+    "mypy>=1.14",
+    "ruff>=0.9",
+    "pytest>=8.3",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["cairn", "cairn.retrieval", "cairn.records", "cairn.agents"]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+check_untyped_defs = true
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "FA"]   # FA = enforce `from __future__ import annotations`

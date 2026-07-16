@@ -1,0 +1,104 @@
+{
+  "event": {
+    "name": "Meridian Summit 2026",
+    "tagline": "Where enterprise AI meets the people who ship it",
+    "host": "Meridian Technologies",
+    "edition": "7th annual",
+    "dates": "September 14-18, 2026",
+    "venue": "Moscone Center, San Francisco, CA",
+    "expected_attendance": 24000,
+    "description": "Meridian Summit is a five-day flagship conference for enterprise technology leaders, builders, and partners. The 2026 edition centers on agentic AI in production: retrieval systems, orchestration, evaluation, and the delivery patterns that get AI from prototype to enterprise scale. All content, companies, and people are fictional and generated for demonstration purposes."
+  },
+  "faqs": [
+    {
+      "id": "faq-001",
+      "category": "registration",
+      "question": "What is included in each pass tier?",
+      "content": "Meridian Summit offers three pass tiers. The Explorer pass ($1,295) includes all keynotes, breakout sessions, the expo floor, and community events. The Builder pass ($1,895) adds hands-on workshops, certification exams, and the Builder Lounge. The Summit Executive pass ($3,400) adds the executive track, curated 1:1 partner meetings, reserved keynote seating, and the invitation-only Tuesday leadership dinner. All tiers include meals during event hours and access to the mobile event app."
+    },
+    {
+      "id": "faq-002",
+      "category": "registration",
+      "question": "Can I upgrade or transfer my pass?",
+      "content": "Pass upgrades are available any time before or during the event at the registration desk in Moscone West, Level 1, subject to availability of the higher tier. The price difference is charged to the original payment method. Passes are transferable to a colleague until September 7; after that date the name on the badge is locked and cannot be changed on-site for security reasons. Refunds are available through August 15 minus a $150 processing fee."
+    },
+    {
+      "id": "faq-003",
+      "category": "venue",
+      "question": "Where is each part of the conference located?",
+      "content": "Keynotes are held in the Moscone North main hall. Breakout sessions run across Moscone West Levels 2 and 3. Hands-on workshops are in Moscone South, Rooms 201–214. The expo floor and the Builder Lounge occupy Moscone South Lower. Registration and the info desk are in Moscone West Level 1. Free shuttle service runs between the three buildings and partner hotels every 15 minutes from 7:00 AM to 7:00 PM."
+    },
+    {
+      "id": "faq-004",
+      "category": "venue",
+      "question": "Is the venue accessible?",
+      "content": "All Moscone buildings are wheelchair accessible with elevators, ramps, and accessible restrooms on every level. ASL interpretation is available for all keynotes and can be requested for breakouts at least 48 hours in advance through the accessibility desk. Assistive listening devices, reserved seating, and quiet rooms are available. Service animals are welcome throughout the venue."
+    },
+    {
+      "id": "faq-005",
+      "category": "schedule",
+      "question": "What are the daily hours and the overall shape of the week?",
+      "content": "Monday September 14 is partner and certification day, running 9:00 AM to 5:00 PM. Tuesday through Thursday are the main conference days, 8:00 AM to 6:00 PM, with the opening keynote Tuesday at 9:00 AM and evening community events. Friday September 18 is a half-day of deep-dive workshops and the closing session, wrapping at 1:00 PM. Doors and registration open at 7:30 AM each day."
+    },
+    {
+      "id": "faq-006",
+      "category": "sessions",
+      "question": "Do I need to reserve seats for sessions?",
+      "content": "Keynotes are open seating and no reservation is required, though popular keynotes fill early. Breakout sessions are open seating on a first-come basis. Hands-on workshops and certification exams require advance reservation through the event app because seats and lab machines are limited. If a workshop is full, join the waitlist in the app and you will be notified if a seat opens. Walk-up standby is available at the room 10 minutes before start."
+    },
+    {
+      "id": "faq-007",
+      "category": "sessions",
+      "question": "Will sessions be recorded and available after the event?",
+      "content": "All keynotes and breakout sessions are recorded and posted to the Meridian Summit content hub within 72 hours of the event ending. Recordings are available to all registered attendees for 12 months using their registration email. Hands-on workshops are not recorded because they are interactive, but workshop materials, slides, and code repositories are shared with participants. Executive track sessions are off the record and not recorded."
+    },
+    {
+      "id": "faq-008",
+      "category": "app",
+      "question": "What can I do in the mobile event app?",
+      "content": "The Meridian Summit app is the hub for your personalized agenda, session reservations, venue maps with turn-by-turn directions, real-time schedule changes, and attendee networking. You can bookmark sessions, scan badges to exchange contact details, book partner meetings, and receive alerts if a session you saved changes rooms. The app is available for iOS and Android and syncs with the account you registered with."
+    },
+    {
+      "id": "faq-009",
+      "category": "networking",
+      "question": "How does attendee networking and badge scanning work?",
+      "content": "Every badge carries a secure QR code. Scanning another attendee's badge in the app exchanges the contact details each person chose to share during registration. You control what is shared in the app privacy settings. The app also suggests relevant connections based on your role and interests, and lets you request meetings that land directly in the other person's app schedule. Lead retrieval for expo partners is a separate opt-in scan."
+    },
+    {
+      "id": "faq-010",
+      "category": "certification",
+      "question": "How do certification exams work at the event?",
+      "content": "On-site certification exams are included with Builder and Summit Executive passes and run Monday and Friday in Moscone South. Seats must be reserved in the app and photo ID is required at check-in. Exams are 90 minutes and results are delivered by email within 5 business days. A free retake is offered at the event if you do not pass on the first attempt and seats remain. Explorer pass holders can purchase an exam voucher for $200."
+    },
+    {
+      "id": "faq-011",
+      "category": "logistics",
+      "question": "What are the food, dietary, and meal arrangements?",
+      "content": "Breakfast, lunch, and afternoon refreshments are served during event hours in the expo halls and are included with all passes. Vegetarian, vegan, gluten-free, halal, and kosher options are available at every meal, marked with clear labeling. Attendees with severe allergies can visit the dietary desk in Moscone South to arrange dedicated meals. Outside food is permitted and there are refrigeration lockers near the first-aid stations for medication and medical needs."
+    },
+    {
+      "id": "faq-012",
+      "category": "logistics",
+      "question": "Where do I get help or report a problem during the event?",
+      "content": "The main info desk is in Moscone West Level 1 and is staffed from 7:00 AM to 7:00 PM. Roaming staff in bright teal vests can help anywhere in the venue. For lost badges, visit registration with photo ID for a free reprint. Lost and found is at the info desk. First aid and medical staff are stationed in each building. For urgent safety issues, contact any staff member or use the help button in the event app to reach the operations team directly."
+    },
+    {
+      "id": "faq-013",
+      "category": "travel",
+      "question": "What are the recommended hotels and travel options?",
+      "content": "Meridian Summit has room blocks at eight partner hotels within walking distance of Moscone, bookable through the event travel portal at a discounted conference rate until August 20. The venue is a 25-minute ride from San Francisco International Airport by taxi or rideshare, or accessible by BART to Powell Street station followed by a short walk. Discounted parking is available at the Fifth and Mission garage. Shuttles connect all partner hotels to the venue."
+    },
+    {
+      "id": "faq-014",
+      "category": "expo",
+      "question": "What is on the expo floor and when is it open?",
+      "content": "The expo floor in Moscone South Lower hosts over 200 partner and sponsor booths, live product demos, the Community Theater, and the Builder Lounge. It is open Tuesday through Thursday from 10:00 AM to 6:00 PM. Highlights include the AI Playground with hands-on stations, the Certification Corner, and daily theater sessions on the half hour. Many partners run passport programs where collecting booth stamps enters you into daily prize drawings."
+    },
+    {
+      "id": "faq-015",
+      "category": "policy",
+      "question": "What is the code of conduct and safety policy?",
+      "content": "Meridian Summit enforces a code of conduct requiring respectful, harassment-free conduct from all attendees, speakers, and staff. Violations can be reported to any staff member, at the info desk, or confidentially through the app help button, and are reviewed by the event safety team. Serious violations may result in removal without refund. Badges must be worn and visible at all times inside the venue, and sharing a badge is prohibited. Anything involving personal safety is escalated immediately to on-site security."
+    }
+  ]
+}

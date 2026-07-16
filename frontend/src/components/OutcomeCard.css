@@ -1,0 +1,88 @@
+.out-card {
+  border-radius: var(--r-md);
+  padding: 11px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border: 1px solid transparent;
+}
+
+.out-card.is-ok {
+  background: #e8efe9;
+  border-color: #d3e0d6;
+}
+
+/* --clay appears nowhere else in the app. When you see it, a rule fired. */
+.out-card.is-refused {
+  background: var(--clay-wash);
+  border-color: #e8c8bb;
+}
+
+.out-head {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.out-mark {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--chalk);
+  flex-shrink: 0;
+}
+
+.is-ok .out-mark {
+  background: var(--moss);
+}
+.is-refused .out-mark {
+  background: var(--clay);
+}
+
+.out-label {
+  font-family: var(--display);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.is-ok .out-label {
+  color: var(--moss);
+}
+.is-refused .out-label {
+  color: var(--clay);
+}
+
+.out-msg {
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+.out-ref {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 1px;
+}
+
+.out-ref-key {
+  font-family: var(--mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+}
+
+.out-ref-val {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-soft);
+  background: rgba(0, 0, 0, 0.05);
+  padding: 1px 5px;
+  border-radius: 3px;
+}

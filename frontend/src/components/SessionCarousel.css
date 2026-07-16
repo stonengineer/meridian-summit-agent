@@ -1,0 +1,124 @@
+.ses-rail {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  /* Bleed past the bubble's padding so cards run to the phone's edge and the
+     next card peeks, instead of stopping short at a container boundary. */
+  margin: 0 -12px;
+  padding: 0 12px 4px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.ses-rail::-webkit-scrollbar {
+  display: none;
+}
+
+.ses-card {
+  flex: 0 0 300px;
+  scroll-snap-align: start;
+  background: var(--chalk);
+  border: 1px solid #e6e2da;
+  border-radius: var(--r-md);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.ses-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ses-type {
+  font-family: var(--mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background: var(--paper-2);
+  color: var(--ink-soft);
+}
+
+/* Type badges carry real information — a workshop needs a Builder pass, a
+   keynote doesn't. Colour encodes that, it isn't decoration. */
+.ses-type-workshop {
+  background: #e8efe9;
+  color: var(--moss);
+}
+.ses-type-keynote {
+  background: #e9e6f0;
+  color: #5a4f7a;
+}
+
+.ses-level {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  color: var(--ink-soft);
+  text-transform: lowercase;
+}
+
+.ses-title {
+  font-family: var(--display);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--ink);
+  /* Two lines max: session titles in the catalog run long and a third line
+     pushes the meta row off the card. */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.ses-desc {
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--ink-soft);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1;
+}
+
+.ses-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  color: var(--ink-soft);
+}
+
+.ses-where {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ses-register {
+  margin-top: 2px;
+  padding: 7px 0;
+  border-radius: var(--r-sm);
+  background: var(--moss);
+  color: var(--chalk);
+  font-size: 12.5px;
+  font-weight: 600;
+  font-family: var(--display);
+  transition: background 0.14s ease;
+}
+
+.ses-register:hover:not(:disabled) {
+  background: var(--moss-lift);
+}
+
+.ses-register.is-registered {
+  background: var(--paper-2);
+  color: var(--ink-soft);
+  cursor: default;
+}
