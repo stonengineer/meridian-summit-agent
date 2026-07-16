@@ -34,7 +34,7 @@ gcloud auth application-default login
 python -m uvicorn main:app --reload
 ```
 
-Model strings are overridable: `GEMINI_MODEL` (default `gemini-3.5-flash`) and
+Model strings are overridable: `GEMINI_MODEL` (default `gemini-2.5-flash`) and
 `EMBEDDING_MODEL` (default `text-embedding-005`).
 
 ### Environment
@@ -44,7 +44,7 @@ Model strings are overridable: `GEMINI_MODEL` (default `gemini-3.5-flash`) and
 | `USE_VERTEX` | unset | `true`/`1`/`yes` enables Vertex embeddings + Gemini |
 | `GCP_PROJECT_ID` | — | Required when `USE_VERTEX` is on |
 | `GCP_REGION` | `us-central1` | Vertex region |
-| `GEMINI_MODEL` | `gemini-3.5-flash` | Reasoning model |
+| `GEMINI_MODEL` | `gemini-2.5-flash` | Reasoning model |
 | `EMBEDDING_MODEL` | `text-embedding-005` | Embedding model |
 | `ACTIVE_ATTENDEE_ID` | unset | Pins the active attendee (e.g. `att-1008`) instead of picking randomly |
 | `CORS_ORIGINS` | `http://localhost:5173` | Comma-separated allowed origins |
@@ -386,12 +386,6 @@ directly from `attendee.registered_sessions` with no entitlement, conflict, or
 capacity check. Today's data doesn't violate anything, but nothing structurally
 prevents a seeded Explorer holding a workshop. Either validate seeds through the
 same path or document them as trusted fixtures — currently neither.
-
-**Vertex is wired but unexercised.** `USE_VERTEX=true` has not been run against
-a live project. `gemini-3.5-flash` in particular is unverified — if the model
-string is wrong, `except Exception` swallows it into a `None` model and you get
-"offline" with no clue why. That's the silent-misconfiguration trap; worth
-tightening to fail loud once it's confirmed working.
 
 **Embeddings are one-at-a-time.** `_vertex_embed` calls the API per document,
 so indexing N articles is N round-trips. Invisible at 44 records, fatal at 5,000
