@@ -17,10 +17,11 @@ from cairn.registry import (
 	get_attendee_retriever,
 	get_session_retriever,
 	me_payload)
+from cairn.config import get_config
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-	# initialize data store at boot
+	get_config().validate()
 	get_active_attendee()
 	get_faq_retriever()
 	get_attendee_retriever()

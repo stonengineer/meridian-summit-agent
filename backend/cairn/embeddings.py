@@ -10,31 +10,33 @@ import os
 import logging
 
 from .retrieval.hybrid_retriever import Embedder
+from .config import get_config, Config
 
 LOGGER = logging.getLogger(__name__)
 _TOKEN_RE = re.compile(r"[a-z0-9]+")
 
 def get_embed_fn() -> Embedder:
-	if os.getenv("USE_VERTEX", "").lower() not in ("1", "true", "yes"):
+	cfg: Config = get_config()
+	if not cfg.use_vertex:
 		return _HashEmbedder()
-	model = _try_init_vertex()
+	model = _try_init_vertex(cfg)
 	if model is None:
 		LOGGER.warning(
 			"[embeddings] Vertex requested but unavailable; using offline fallback")
 		return _HashEmbedder()
 	return _VertexEmbedder(model)
 
-def _try_init_vertex():
+def _try_init_vertex(cfg: Config):
 	try:
 		import vertexai
 		from vertexai.language_models import TextEmbeddingModel
 
 		vertexai.init(
-			project = os.environ["GCP_PROJECT_ID"],
-			location=os.getenv("GCP_REGION", "us-central1")
+			project = cfg.gcp_project_id,
+			location = cfg.gcp_region
 		)
 		return TextEmbeddingModel.from_pretrained(
-			os.getenv("EMBEDDING_MODEL", "text-embedding-005")
+			cfg.embedding_model
 		)
 	except Exception:
 		LOGGER.warning("[embeddings] Vertex init failed", exc_info=True)

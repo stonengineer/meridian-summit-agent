@@ -22,6 +22,7 @@ from .loaders import(
 	load_attendees,
 	load_sessions)
 from .embeddings import get_embed_fn
+from .config import get_config
 
 LOGGER = logging.getLogger(__name__)
 
@@ -30,7 +31,7 @@ def get_active_attendee() -> Attendee:
 	attendees: list[Attendee] = load_attendees()
 
 	# allow env override for active user selection
-	if forced := os.getenv("ACTIVE_ATTENDEE_ID"):
+	if forced := get_config().active_attendee_id:
 		match: Attendee | None = next(
 			(a for a in attendees if a.id == forced), None)
 		if match is None:
