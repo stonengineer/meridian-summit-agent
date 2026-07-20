@@ -201,22 +201,8 @@ the refusal message, so we render it rather than inventing phrasing on top.
 ## Known gaps
 
 - **No markdown rendering.** `.bubble` uses `white-space: pre-wrap` with no
-  parser, so any `**bold**` from the model renders as literal asterisks. Two
-  fixes, and the backend one is better: tell the model not to emit markdown
-  (the cards *are* the formatting). If richer text is ever wanted,
-  `react-markdown` swaps into the bubble body. **This will bite on the first
-  live Gemini turn** — the backend's Style rules don't yet forbid markdown.
-- **The offline suffix leaks through.** `offline.py` appends
-  `_(Offline mode — set USE_VERTEX=true…)_` to every answer, which renders as
-  literal underscores *and* duplicates the `OFFLINE` tag this UI already shows
-  next to the bubble. Fix is in the backend: delete the suffix.
-- **`/api/me` has no `first_name`.** The backend has the field and doesn't
-  return it, so `format.js` re-derives it and handles the "Dr." case. If the
-  payload gains it, prefer it and delete that logic.
-- **`registeredIds` is a client-side hint**, accumulated from tool activity. It
-  makes a card say "Registered" instead of showing a live button. The backend
-  stays the authority, and a stale hint is harmless because
-  `register_for_session` is idempotent.
+  parser, so any `**bold**` from the model renders as literal asterisks. 
+	Currently handled via the backend styling rules in system_prompt.
 - **Schedule cards are title-only.** `my_registrations` returns
   `session_title` but no date/time/location, so there's nothing richer to
   render. That's a backend change — add the fields to the tool's return dict.

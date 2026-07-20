@@ -182,8 +182,9 @@ meridian-summit-agent/
 
 ## Status
 
-Working end to end in offline mode. Vertex integration is wired but not yet
-exercised against a live project — that's the next session's work.
+Working end to end in both offline and online mode via wiring to a real
+GCP project. Currently only available in localhost with your own project
+key; please see the attached video for a working demo.
 
 Known gaps are listed honestly in each sub-README rather than in a roadmap
 here, because they're specific to their layer.

@@ -357,12 +357,12 @@ unable to act for anyone else. Entitlement and conflict both operate purely on
 the active attendee's own data, which is why they fit the model cleanly and why
 they were the right two rules to build.
 
-Capacity doesn't. A headcount needs every attendee's registrations, which means
-seeding all 18 into a store whose entire safety property is that it only holds
-one person's rows. You'd trade a structural guarantee — *cannot* act for
-another user — for a defensive check that a later refactor could quietly drop.
-That's a bad trade for a limit that, at hundreds of seats and a single
-registering user, would never bind.
+Capacity doesn't fit the model cleanly. A headcount needs every attendee's
+registrations, which means seeding all 18 into a store whose entire safety
+property is that it only holds one person's rows. You'd trade a structural
+guarantee — *cannot* act for another user — for a defensive check that a later
+refactor could quietly drop. That's a bad trade for a limit that, at hundreds
+of seats and a single registering user, would never bind.
 
 Implementing it would need, in order: a `capacity` field added to all 11
 sessions in `sessions.json` (it isn't in the data at all), the field threaded
