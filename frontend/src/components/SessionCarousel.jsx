@@ -46,10 +46,10 @@ function SessionCard({ session, registered, onRegister }) {
       <p className="ses-desc">{session.description}</p>
 
       <div className="ses-meta">
-        <span className="ses-when">
+        <span className="ses-data">
           {formatDate(session.date)} · {formatTime(session.start_time)}
         </span>
-        <span className="ses-where">{session.location}</span>
+        <span className="ses-data">{session.location}</span>
       </div>
 
       <button

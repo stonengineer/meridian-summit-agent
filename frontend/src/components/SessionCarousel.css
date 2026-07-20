@@ -95,7 +95,7 @@
   color: var(--ink-soft);
 }
 
-.ses-where {
+.ses-data {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
