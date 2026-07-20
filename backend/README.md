@@ -387,27 +387,6 @@ capacity check. Today's data doesn't violate anything, but nothing structurally
 prevents a seeded Explorer holding a workshop. Either validate seeds through the
 same path or document them as trusted fixtures — currently neither.
 
-**Embeddings are one-at-a-time.** `_vertex_embed` calls the API per document,
-so indexing N articles is N round-trips. Invisible at 44 records, fatal at 5,000
-— the fix is an `Embedder` protocol with an `embed_batch` method that chunks to
-Vertex's per-request cap. The `EmbedFn` alias is a `Callable`, which is exactly
-what blocks batching; that's the change to make first if the corpus grows.
-
-**`me_payload()` omits `first_name`.** The data has it, the loader loads it, and
-the payload doesn't return it — so the frontend re-derives it and has to strip
-"Dr." from *Dr. Amara Okonkwo* itself. Adding the field to the payload deletes
-frontend code.
-
-**`_OFFLINE_SUFFIX` is developer text in a user's chat bubble.** It renders as
-literal underscores (no markdown parser in the UI) *and* duplicates the
-`OFFLINE` tag the frontend already shows. Delete it from `offline.py`.
-
-**No markdown rule in the system prompt.** Gemini is trained to emit `**bold**`
-and bullet lists. The cards *are* the formatting, so the Style section should
-say so: *"Write plain prose. No markdown, no bullet lists — the interface
-renders structured results as cards."* Without it, tomorrow's first live turn
-will show raw asterisks.
-
 **No evaluation harness.** The offline router has a routing test; retrieval has
 nothing. "How do you know retrieval is good?" currently has no answer. A gold
 set of ~10 query→expected-article pairs and a recall@k script is ~30 minutes and
@@ -417,20 +396,3 @@ turns "I built RAG" into "I measured it."
 singleton — one user per server process. Multi-tenant means the attendee moves
 from an `lru_cache` to a per-request dependency and the store becomes
 per-session. The seam is known; it just isn't built.
-
----
-
-## What's next
-
-In the order that matters:
-
-1. **Stand up Vertex.** Confirm the model strings, run a real turn, and decide
-   whether a failed init should fall back silently or fail loud. (It should
-   probably fail loud: "you asked for Vertex, you get Vertex or an error" is a
-   stronger contract than degrading into a keyword histogram while claiming to
-   be live.)
-2. **Add the markdown rule** to the prompt and delete `_OFFLINE_SUFFIX` — both
-   are one-liners that fix visible output.
-3. **The eval harness.** It's the thing that separates "I built a RAG system"
-   from "I know whether it works."
-4. **Batch embeddings** — only if the corpus grows past a few hundred records.
