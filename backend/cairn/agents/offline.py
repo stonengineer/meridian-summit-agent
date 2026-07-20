@@ -34,8 +34,6 @@ from .tools import (
 
 LOGGER = logging.getLogger(__name__)
 
-_OFFLINE_SUFFIX = "\n\n_(Offline mode — set USE_VERTEX=true for full reasoning.)_"
-
 # --------------------------------------------------------------------------
 # Intent patterns. Checked in the order listed in _route(); first match wins,
 # so the most specific intents come first.
@@ -138,7 +136,7 @@ def _render(intent: str | None, result) -> str:
 	if intent is None:
 		return (
 			"I couldn't find anything on that in the event data. Try asking about "
-			"sessions, attendees, or event logistics." + _OFFLINE_SUFFIX
+			"sessions, attendees, or event logistics."
 		)
 
 	if intent == "whoami":
@@ -146,32 +144,32 @@ def _render(intent: str | None, result) -> str:
 		speaking = " You're speaking at this event." if me.get("is_speaker") else ""
 		return (
 			f"You're {me['name']}, {me['title']} at {me['company']}, "
-			f"on a {me['pass_tier']} pass.{speaking}" + _OFFLINE_SUFFIX
+			f"on a {me['pass_tier']} pass.{speaking}"
 		)
 
 	if intent == "my_registrations":
 		regs = result.get("registrations", [])
 		if not regs:
-			return "You're not registered for any sessions yet." + _OFFLINE_SUFFIX
-		return f"You're registered for {len(regs)} session{'s' if len(regs) != 1 else ''}:" + _OFFLINE_SUFFIX
+			return "You're not registered for any sessions yet."
+		return f"You're registered for {len(regs)} session{'s' if len(regs) != 1 else ''}:"
 
 	if intent == "find_attendees":
 		people = result.get("results", [])
 		if not people:
-			return "I couldn't find anyone matching that." + _OFFLINE_SUFFIX
-		return "Here's who matches:\n\n" + _OFFLINE_SUFFIX
+			return "I couldn't find anyone matching that."
+		return "Here's who matches:\n\n"
 
 	if intent == "find_sessions":
 		sessions = result.get("results", [])
 		if not sessions:
-			return "I couldn't find a session on that." + _OFFLINE_SUFFIX
-		return "These look relevant:\n\n" + _OFFLINE_SUFFIX
+			return "I couldn't find a session on that."
+		return "These look relevant:\n\n"
 
 	if intent == "search_faq":
 		faqs = result.get("results", [])
 		if not faqs:
-			return "I don't have anything on that in the event FAQ." + _OFFLINE_SUFFIX
+			return "I don't have anything on that in the event FAQ."
 		top = faqs[0]
-		return f"{top['content']}\n\n_(From: {top['question']})_" + _OFFLINE_SUFFIX
+		return f"{top['content']}\n\n (From: {top['question']})"
 
-	return "Something went wrong routing that question." + _OFFLINE_SUFFIX
+	return "Something went wrong routing that question."
