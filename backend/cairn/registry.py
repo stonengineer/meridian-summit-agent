@@ -50,6 +50,8 @@ def me_payload() -> dict:
 	return {
 		"id": a.id,
 		"name": a.name,
+		"first_name": a.first_name,
+		"last_name": a.last_name,
 		"title": a.title,
 		"company": a.company,
 		"pass_tier": a.pass_tier,
