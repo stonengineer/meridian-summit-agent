@@ -203,9 +203,6 @@ the refusal message, so we render it rather than inventing phrasing on top.
 - **No markdown rendering.** `.bubble` uses `white-space: pre-wrap` with no
   parser, so any `**bold**` from the model renders as literal asterisks. 
 	Currently handled via the backend styling rules in system_prompt.
-- **Schedule cards are title-only.** `my_registrations` returns
-  `session_title` but no date/time/location, so there's nothing richer to
-  render. That's a backend change — add the fields to the tool's return dict.
 - **`OutcomeCard`'s waitlist branch is unreachable.** It renders an "Added to
   waitlist" state that the backend never produces — capacity was
   [deliberately scoped out](../backend/README.md#scoped-out-capacity-and-waitlisting),
