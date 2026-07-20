@@ -39,10 +39,13 @@
   text-overflow: ellipsis;
 }
 
-.reg-id {
+.reg-when {
   font-family: var(--mono);
   font-size: 10px;
   color: var(--ink-soft);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .reg-status {

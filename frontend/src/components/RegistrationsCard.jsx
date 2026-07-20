@@ -1,3 +1,4 @@
+import { formatDate, formatTime } from "../lib/format.js";
 import "./RegistrationsCard.css";
 
 /**
@@ -22,7 +23,9 @@ export default function RegistrationsCard({ registrations }) {
         <div className="reg-row" key={r.registration_id}>
           <div className="reg-main">
             <div className="reg-title">{r.session_title}</div>
-            <code className="reg-id">{r.registration_id}</code>
+						<span className="reg-when">
+							{formatDate(r.date)} · {formatTime(r.start_time)} - {formatTime(r.end_time)}
+						</span>
           </div>
           <span className={`reg-status reg-${r.status}`}>{r.status}</span>
         </div>

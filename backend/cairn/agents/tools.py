@@ -119,6 +119,9 @@ def my_registrations() -> dict:
 				"registration_id": r.id,
 				"session_id": r.session_id,
 				"session_title": r_sessions[r.session_id].title,
+				"date": r_sessions[r.session_id].date.isoformat(),
+				"start_time": r_sessions[r.session_id].start_time.isoformat(),
+				"end_time": r_sessions[r.session_id].end_time.isoformat(),
 				"status": r.status.value
 			}
 			for r in registrations
