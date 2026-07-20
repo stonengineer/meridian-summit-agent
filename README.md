@@ -31,6 +31,12 @@ Everything is synthetic. No real company, person, or event is represented.
 
 ---
 
+## Demo Video
+
+https://github.com/user-attachments/assets/e1069adc-06ac-407a-a447-8c211b18e2eb
+
+---
+
 ## Why it looks like this
 
 The demo is two panes because the interesting part of an AI system is invisible
