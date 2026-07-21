@@ -153,8 +153,9 @@ demo insurance, not a second brain: it cannot chain tools, resolve pronouns, or
 synthesize. Retrieval quality is also degraded, because hash embeddings match
 words rather than meaning.
 
-**Full behavior requires `USE_VERTEX=true`.** See
-[backend/README.md](backend/README.md#running-against-vertex).
+Online mode (`USE_VERTEX=true`) uses real Vertex embeddings and Gemini
+function calling; offline mode is a deliberately degraded, read-only
+fallback — see the table above.
 
 ---
 
