@@ -15,7 +15,7 @@ Database actions include:
 
 from __future__ import annotations
 
-from vertexai.generative_models import FunctionDeclaration, Tool
+from google.genai import types
 
 from ..retrieval import ScoredResult
 from ..records.models import RegistrationStatus, RegistrationOutcome
@@ -128,8 +128,8 @@ def my_registrations() -> dict:
 		]
 	}
 
-TOOL_DECLARATIONS: list[FunctionDeclaration] = [
-	FunctionDeclaration(
+TOOL_DECLARATIONS: list[types.FunctionDeclaration] = [
+	types.FunctionDeclaration(
 		name="whoami",
 		description=(
 			"Get the identity of the attendee you are assisting: their name, title, "
@@ -139,7 +139,7 @@ TOOL_DECLARATIONS: list[FunctionDeclaration] = [
 		),
 		parameters={"type": "object", "properties": {}},
 	),
-	FunctionDeclaration(
+	types.FunctionDeclaration(
 		name="search_faq",
 		description=(
 			"Search the event FAQ and policy knowledge base for Meridian Summit: "
@@ -160,7 +160,7 @@ TOOL_DECLARATIONS: list[FunctionDeclaration] = [
 			"required": ["query"],
 		},
 	),
-	FunctionDeclaration(
+	types.FunctionDeclaration(
 		name="find_sessions",
 		description=(
 			"Search the session catalog (keynotes, breakouts, workshops) by topic, "
@@ -180,7 +180,7 @@ TOOL_DECLARATIONS: list[FunctionDeclaration] = [
 			"required": ["query"],
 		},
 	),
-	FunctionDeclaration(
+	types.FunctionDeclaration(
 		name="find_attendees",
 		description=(
 			"Find attendees or speakers by expertise, role, company, or interest. "
@@ -215,7 +215,7 @@ TOOL_DECLARATIONS: list[FunctionDeclaration] = [
 			"required": ["query"],
 		},
 	),
-	FunctionDeclaration(
+	types.FunctionDeclaration(
 		name="my_registrations",
 		description=(
 			"List the sessions the current attendee is registered for, with each "
@@ -224,7 +224,7 @@ TOOL_DECLARATIONS: list[FunctionDeclaration] = [
 		),
 		parameters={"type": "object", "properties": {}},
 	),
-	FunctionDeclaration(
+	types.FunctionDeclaration(
 		name="register_for_session",
 		description=(
 			"Register the current attendee for a session. Requires a session_id from "
@@ -244,7 +244,7 @@ TOOL_DECLARATIONS: list[FunctionDeclaration] = [
 			"required": ["session_id"],
 		},
 	),
-	FunctionDeclaration(
+	types.FunctionDeclaration(
 		name="cancel_registration",
 		description=(
 			"Cancel one of the current attendee's registrations. Requires a "
@@ -263,7 +263,7 @@ TOOL_DECLARATIONS: list[FunctionDeclaration] = [
 	),
 ]
 
-CONFERENCE_TOOLS = Tool(function_declarations=TOOL_DECLARATIONS)
+CONFERENCE_TOOLS = types.Tool(function_declarations=TOOL_DECLARATIONS)
 
 TOOL_IMPL = {
 	"whoami": lambda a: whoami(),

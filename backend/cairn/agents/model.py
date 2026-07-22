@@ -1,18 +1,15 @@
 """
 Loads the Reasoning Engine LLM
 
-Leverages environment variables to either load/initialize an instance of Gemini
-Flash 3.5, or returns None on error/disabled.
+Leverages environment variables to either load/initialize a Vertex-backed
+google.genai.Client, or return None on error/disabled.
 """
 
 from __future__ import annotations
 
 import logging
-import os
 from functools import lru_cache
 
-from .system_prompt import SYSTEM_PROMPT
-from .tools import CONFERENCE_TOOLS
 from ..config import get_config, Config
 
 LOGGER = logging.getLogger(__name__)
@@ -23,17 +20,11 @@ def get_model():
 	if not cfg.use_vertex:
 		return None
 	try:
-		import vertexai
-		from vertexai.generative_models import GenerativeModel
-
-		vertexai.init(
+		from google import genai
+		return genai.Client(
+			vertexai = True,
 			project = cfg.gcp_project_id,
 			location = cfg.gcp_region
-		)
-		return GenerativeModel(
-			cfg.gemini_model,
-			system_instruction = SYSTEM_PROMPT,
-			tools = [CONFERENCE_TOOLS]
 		)
 	except KeyError as e:
 		LOGGER.warning("[model] missing env var: %s", e)

@@ -274,7 +274,7 @@ the model is still calling tools, `resp` is a function-call response and text
 extraction would return an empty string — a blank reply. The `else` catches
 exactly that case and returns an honest message instead.
 
-`vertexai` is imported *inside* `_gemini_answer`, not at module top. A top-level
+`google.genai` is imported *inside* `_gemini_answer`, not at module top. A top-level
 import would raise `ImportError` without the SDK installed, and the offline path
 would die before `run_turn` ever checked `if model is None`.
 

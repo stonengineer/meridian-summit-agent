@@ -7,7 +7,7 @@ dependencies = [
     "fastapi>=0.115",
     "uvicorn[standard]>=0.34",
     "pydantic>=2.10",
-    "google-cloud-aiplatform>=1.71",
+		"google-genai>=2.0",
 ]
 
 [project.optional-dependencies]

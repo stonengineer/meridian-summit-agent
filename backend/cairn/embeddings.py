@@ -6,7 +6,6 @@ hybrid retrievers to use
 """
 
 import re
-import os
 import logging
 
 from .retrieval.hybrid_retriever import Embedder
@@ -19,24 +18,20 @@ def get_embed_fn() -> Embedder:
 	cfg: Config = get_config()
 	if not cfg.use_vertex:
 		return _HashEmbedder()
-	model = _try_init_vertex(cfg)
-	if model is None:
+	client = _try_init_vertex(cfg)
+	if client is None:
 		LOGGER.warning(
 			"[embeddings] Vertex requested but unavailable; using offline fallback")
 		return _HashEmbedder()
-	return _VertexEmbedder(model)
+	return _VertexEmbedder(client, cfg.embedding_model)
 
 def _try_init_vertex(cfg: Config):
 	try:
-		import vertexai
-		from vertexai.language_models import TextEmbeddingModel
-
-		vertexai.init(
+		from google import genai
+		return genai.Client(
+			vertexai = True,
 			project = cfg.gcp_project_id,
 			location = cfg.gcp_region
-		)
-		return TextEmbeddingModel.from_pretrained(
-			cfg.embedding_model
 		)
 	except Exception:
 		LOGGER.warning("[embeddings] Vertex init failed", exc_info=True)
@@ -59,15 +54,24 @@ class _HashEmbedder:
 class _VertexEmbedder:
 	_MAX_BATCH = 250
 
-	def __init__(self, model):
-		self._model = model
+	def __init__(self, client, model_name: str):
+		self._client = client
+		self._model = model_name
 
 	def __call__(self, text: str) -> list[float]:
-		return self._model.get_embeddings([text])[0].values
+		resp = self._client.models.embed_content(
+			model = self._model,
+			contents = text
+		)
+		return resp.embeddings[0].values
 
 	def embed_batch(self, texts: list[str]) -> list[list[float]]:
 		out: list[list[float]] = []
 		for i in range(0, len(texts), self._MAX_BATCH):
 			chunk = texts[i: i + self._MAX_BATCH]
-			out.extend(e.values for e in self._model.get_embeddings(chunk))
+			resp = self._client.models.embed_content(
+				model = self._model,
+				content = chunk
+			)
+			out.extend(e.values for e in resp.embeddings)
 		return out

@@ -29,15 +29,24 @@ _LOOP_CAP = 8
 LOGGER = logging.getLogger(__name__)
 
 def run_turn(message: str, history: Optional[list[dict]] = None) -> dict:
-	model = get_model()
-	if model is None:
+	client = get_model()
+	if client is None:
 		return offline_turn(message)
-	return _gemini_answer(model, message, history)
+	return _gemini_answer(client, message, history)
 
-def _gemini_answer(model, message: str, history: list[dict] | None) -> dict:
-	from vertexai.generative_models import Content, Part
+def _gemini_answer(client, message: str, history: list[dict] | None) -> dict:
+	from google.genai import types
+	from ..config import get_config
 
-	chat = model.start_chat(history=_to_gemini_history(history))
+	chat = client.chats.create(
+		model = get_config().gemini_model,
+		config = types.GenerateContentConfig(
+			system_instruction = SYSTEM_PROMPT,
+			tools = [CONFERENCE_TOOLS]
+		),
+		history = _to_gemini_history(history)
+	)
+
 	utterance: str = f"## USER UTTERANCE\n\n{message}"
 	tool_activity: list[dict] = []
 
@@ -56,14 +65,11 @@ def _gemini_answer(model, message: str, history: list[dict] | None) -> dict:
 				"args": call["args"],
 				"result": output
 			})
-			tool_responses.append(Part.from_function_response(
+			tool_responses.append(types.Part.from_function_response(
 				name = call["name"],
 				response = {"result": output}
 			))
-		resp = chat.send_message(Content(
-			role = "user",
-			parts = tool_responses
-		))
+		resp = chat.send_message(tool_responses)
 	else:
 		LOGGER.warning("Tool loop hit cap of %d without a final answer", _LOOP_CAP)
 		return {
@@ -77,15 +83,15 @@ def _gemini_answer(model, message: str, history: list[dict] | None) -> dict:
 	}
 
 def _to_gemini_history(history: list[dict] | None):
-	from vertexai.generative_models import Content, Part
+	from google.genai import types
 
 	gemini_history = []
 	if history is not None:
 		for turn in history:
 			role = "model" if turn.get("role") == "assistant" else "user"
-			gemini_history.append(Content(
+			gemini_history.append(types.Content(
 				role = role,
-				parts = [Part.from_text(turn.get("content", ""))]
+				parts = [types.Part.from_text(text = turn.get("content", ""))]
 			))
 	return gemini_history
 
