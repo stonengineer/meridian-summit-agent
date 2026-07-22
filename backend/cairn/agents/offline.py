@@ -14,9 +14,7 @@ Scope of the lie — this does keyword matching, not reasoning. It cannot handle
   * multi-step questions ("find a security session and check for conflicts")
   * pronoun resolution ("is she speaking?")
   * synthesis across corpora
-It answers one question with one tool. Routing accuracy is ~25/26 on the
-utterances in tests/test_offline_routing.py; unmatched input falls through to
-FAQ search, which is the broadest corpus and the safest default.
+It answers one question with one tool.
 """
 
 from __future__ import annotations
