@@ -114,12 +114,21 @@ full result*. That result payload is the card data, so there are deliberately no
 `/api/sessions` or `/api/attendees` endpoints to re-fetch what the agent already
 returned.
 
-Details, decisions, and known gaps:
+### Architecture Deep Dives
 
-- **[backend/README.md](backend/README.md)** — retrieval, tools, the store, the
-  agent loop, and what's next
-- **[frontend/README.md](frontend/README.md)** — the two panes, card derivation,
-  design system
+This repository intentionally keeps the root README concise. The implementation
+details and design rationale are documented alongside the code.
+
+- **backend/README.md**
+  - Why hybrid retrieval (BM25 + embeddings + RRF)
+  - Why deterministic records instead of an LLM datastore
+  - Tool orchestration and dependency graph
+  - Tradeoffs and future improvements
+
+- **frontend/README.md**
+  - Why the UI derives cards from agent activity
+  - State management decisions
+  - Design system and trace visualization
 
 ---
 
